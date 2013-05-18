@@ -1,1 +1,3 @@
 hook/svn-postcommit-debian ./usr/share/pybit/svn/
+hook/changes-debian ./usr/share/pybit/apt/
+examples/procmail-mbox.py ./usr/share/doc/pybit-svn/examples/
