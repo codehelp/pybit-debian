@@ -1,0 +1,15 @@
+<VirtualHost *:80>
+    WSGIDaemonProcess pybitweb user=pybitweb group=pybitweb processes=1 threads=5
+	WSGIProcessGroup pybitweb
+    WSGIScriptAlias / /usr/share/pybit-web/application.wsgi
+    WSGIPassAuthorization On
+    <Directory /usr/share/pybit-web/static>
+        WSGIApplicationGroup %{GLOBAL}
+        WSGIPassAuthorization On
+        Order deny,allow
+        Allow from all
+    </Directory>
+    LogLevel info
+    ErrorLog ${APACHE_LOG_DIR}/pybit-error.log
+    CustomLog ${APACHE_LOG_DIR}/pybit-access.log combined
+</VirtualHost>

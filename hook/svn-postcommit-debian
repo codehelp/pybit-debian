@@ -1,0 +1,116 @@
+#!/bin/sh
+
+set -e
+
+#       svn-postcommit-debian - Debian-based SVN postcommit hook
+#
+#       Copyright 2012 Neil Williams <codehelp@debian.org>
+#
+#       This program is free software; you can redistribute it and/or modify
+#       it under the terms of the GNU General Public License as published by
+#       the Free Software Foundation; either version 2 of the License, or
+#       (at your option) any later version.
+#
+#       This program is distributed in the hope that it will be useful,
+#       but WITHOUT ANY WARRANTY; without even the implied warranty of
+#       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#       GNU General Public License for more details.
+#
+#       You should have received a copy of the GNU General Public License
+#       along with this program; if not, write to the Free Software
+#       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+#       MA 02110-1301, USA.
+
+######## Configuration ############
+
+# Network location of the pybit-web server
+PYBIT_HTTP="http://buildmaster/job/vcshook"
+
+# Anonymous SVN URI stub
+ANON_SVN="http://buildmaster.tcl.office/svn/lwdev"
+
+# Distribution
+DISTRO_NAME="Debian"
+
+USERNAME="admin"
+PASSWORD="pass"
+
+####### End Configuration #########
+
+# POST-COMMIT HOOK
+#
+# The post-commit hook is invoked after a commit.  Subversion runs
+# this hook by invoking a program (script, executable, binary, etc.)
+# named 'post-commit' (for which this file is a template) with the
+# following ordered arguments:
+#
+#   [1] REPOS-PATH   (the path to this repository)
+#   [2] REV          (the number of the revision just committed)
+#
+# The default working directory for the invocation is undefined, so
+# the program should set one explicitly if it cares.
+#
+# Because the commit has already completed and cannot be undone,
+# the exit code of the hook program is ignored.  The hook program
+# can use the 'svnlook' utility to help it examine the
+# newly-committed tree.
+#
+# On a Unix system, the normal procedure is to have 'post-commit'
+# invoke other programs to do the real work, though it may do the
+# work itself too.
+#
+# Note that 'post-commit' must be executable by the user(s) who will
+# invoke it (typically the user httpd runs as), and that user must
+# have filesystem-level permission to access the repository.
+#
+# On a Windows system, you should name the hook program
+# 'post-commit.bat' or 'post-commit.exe',
+# but the basic idea is the same.
+#
+# The hook program typically does not inherit the environment of
+# its parent process.  For example, a common problem is for the
+# PATH environment variable to not be set to its usual value, so
+# that subprograms fail to launch unless invoked via absolute path.
+# If you're having unexpected problems with a hook program, the
+# culprit may be unusual (or missing) environment variables.
+#
+# Here is an example hook script, for a Unix /bin/sh interpreter.
+# For more examples and pre-written hooks, see those in
+# /usr/share/subversion/hook-scripts, and in the repository at
+# http://svn.apache.org/repos/asf/subversion/trunk/tools/hook-scripts/ and
+# http://svn.apache.org/repos/asf/subversion/trunk/contrib/hook-scripts/
+
+REPOS="$1"
+REV="$2"
+METHOD="svn"
+RES=`svnlook changed ${REPOS} --revision ${REV}|grep "debian/changelog" || true`
+PKG=`echo "${RES}" | cut -d' ' -f4- || true`
+if [ ! "${RES}" ]; then
+	exit 0
+fi
+if [ ! "${PKG}" ]; then
+	exit 0
+fi
+DEBDIR=`dirname $PKG`
+PKGDIR=`dirname $DEBDIR`
+PKG=`basename $PKGDIR`
+CHGLG=`echo ${RES} | sed -e 's/^. //'`
+TMPFILE=`mktemp`
+svn cat file://${REPOS}/${CHGLG} > ${TMPFILE}
+VERSION=`dpkg-parsechangelog -l${TMPFILE} | grep '^Version: ' | sed -e 's/^.*: //'`
+SUITE=`dpkg-parsechangelog -l${TMPFILE} | grep '^Distribution: ' | sed -e 's/^.*: //'`
+# replace the svndirectory name with the actual source package name, in case it differs
+PKG=`dpkg-parsechangelog -l${TMPFILE} | grep '^Source: ' |sed -e 's/^.*: //'`
+rm ${TMPFILE}
+CTRL=`echo ${CHGLG} | sed -e 's/changelog$/control/'`
+LIST=`svn cat file://${REPOS}/${CTRL} | grep '^Architecture: '| cut -d':' -f2|sort -u|tr '\n' ','|sed -e 's/ //g'| sed -e 's/,$//'`
+DATASTR="--data-urlencode method=svn"
+DATASTR="${DATASTR} --data-urlencode distribution=${DISTRO_NAME}"
+DATASTR="${DATASTR} --data-urlencode vcs_id=${REV}"
+DATASTR="${DATASTR} --data-urlencode architecture_list=${LIST}"
+DATASTR="${DATASTR} --data-urlencode package_version=${VERSION}"
+DATASTR="${DATASTR} --data-urlencode package=${PKG}"
+DATASTR="${DATASTR} --data-urlencode suite=${SUITE}"
+DATASTR="${DATASTR} --data-urlencode format=deb"
+DATASTR="${DATASTR} --data-urlencode uri=${ANON_SVN}/${PKGDIR}"
+/usr/bin/curl -i -X POST ${PYBIT_HTTP} ${DATASTR} --user "${USERNAME}:${PASSWORD}"

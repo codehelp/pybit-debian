@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <META HTTP-EQUIV='PRAGMA' CONTENT='NO-CACHE'>
+        <META HTTP-EQUIV="Expires" CONTENT="-1">
+        <meta charset="utf-8">
+        <title>pyBit - Lookups</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="favicon.png" />
+        <style type="text/css">
+            body
+            {
+                padding-top : 60px; /* 60px to make the container go all the way
+                 * to the bottom of the topbar */
+                padding-bottom : 40px;
+            }
+        </style>
+        <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <script src="{{protocol}}{{jqueryurl}}" type="text/javascript"></script>
+        <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="navbar navbar-inverse navbar-fixed-top">
+                    <div class="navbar-inner">
+                        <div class="container-fluid">
+                            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+                            <a class="brand" href="index.htm">pyBit</a>
+                            <div class="nav-collapse collapse">
+                                <ul class="nav">
+                                    <li class="active">
+                                        <a href="index.htm">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="lookups.htm">Lookups</a>
+                                    </li>
+                                    <li>
+                                        <a href="package.htm">Packages</a>
+                                    </li>
+                                    <li>
+                                        <a href="packageinstance.htm">Package Instances</a>
+                                    </li>
+                                    <li>
+                                        <a href="job.htm">Jobs</a>
+                                    </li>
+                                    <li>
+                                        <a href="buildd.htm">Build Boxes</a>
+                                    </li>
+                                    <li>
+                                        <a href="dashboard.htm">Dashboard</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--/.nav-collapse -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="span2">
+                <!--Sidebar content-->
+                <div class="well sidebar-nav">
+                    <ul class="nav  nav-list">
+                        <li class="nav-header">
+                            Navigation
+                        </li>
+                        <li class="active">
+                            <a href="index.htm">Home</a>
+                        </li>
+                        <li class="nav-header">
+                            Lookups
+                        </li>
+                        <li>
+                            <a href="arches.htm">Architectures</a>
+                        </li>
+                        <li>
+                            <a href="statuses.htm">Statuses</a>
+                        </li>
+                        <li>
+                            <a href="dists.htm">Dists</a>
+                        </li>
+                        <li>
+                            <a href="formats.htm">Formats</a>
+                        </li>
+                        <li>
+                            <a href="suites.htm">Suites</a>
+                        </li>
+                        <li>
+                            <a href="envs.htm">Build Environments</a>
+                        </li>
+                        <li class="nav-header">
+                            Packages
+                        </li>
+                        <li>
+                            <a href="package.htm">All Packages</a>
+                        </li>
+                        <li>
+                            <a href="packageinstance.htm">Package Instances</a>
+                        </li>
+                        <li class="nav-header">
+                            Jobs
+                        </li>
+                        <li>
+                            <a href="job.htm">Jobs</a>
+                        </li>
+                        <li>
+                            <a href="buildd.htm">BuildBoxes</a>
+                        </li>
+                        <li>
+                            <a href="blacklist.htm">Blacklist Rules</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--/.well -->
+            </div>
+            <div class="span10">
+                <!--Body content-->
+                <div class="container-fluid">
+                    <div class="well">
+                        <h1>PyBit</h1><h2>Python Buildd Integration Toolkit.</h2>
+                        <p>
+                            A new build system using python and RabbitMQ, providing a RESTful HTTP based API.
+                        </p>
+                        <p>
+                            <a class="btn btn-success btn-large" href='http://nicholasdavidson.github.com/pybit/'>Learn more &raquo;</a>
+                        </p>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="accordion" id="accordion1">
+                            <div class="accordion-group">
+                                <div class="accordion-heading">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo"> Click here to show/hide important information about Pybit </a>
+                                </div>
+                                <div id="collapseTwo" class="accordion-body collapse in">
+                                    <div class="accordion-inner">
+                                        <h4>About Pybit</h4>
+                                        <div class="span10">
+                                            <p>pyBit (πβ) - The Python Build Integration Toolkit, aims to create a distributed, cross platform build system system using python and RabbitMQ. Python-bottle is used to provide a lightweight web based API, as well as this web interface.</p>
+
+<p>We aim to be flexible enough to build any combination of package types (i.e. DEB, RPM) for any arch, for any system. Currently however, we are mostly concerned with building ARM and i386 packages from SVN, to target Debian GNU/Linux.</p>
+
+<p>pyBit is Free Software. For support, contact us on IRC - #pybit on irc.oftc.net irc://irc.oftc.org/pybit (Or use github issues)
+</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="accordion" id="accordion2">
+                            <div class="accordion-group">
+                                <div class="accordion-heading">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree"> Click here to show/hide help text, and links. </a>
+                                </div>
+                                <div id="collapseThree" class="accordion-body collapse in">
+                                    <div class="accordion-inner">
+                                        <div class="span4">
+                                            <h2>Packages</h2>
+                                            <p>
+                                                Click here to register/delete packages, and package instances as well as to cancel all build jobs for a chosen package.
+                                            </p>
+                                            <p>
+                                                <a class="btn" href="package.htm">View details &raquo;</a></p>
+                                                </div><!--/span-->
+                                                <div class="span4">
+                                                <h2>Jobs</h2>
+                                                <p>Click here to add or cancel jobs, as well as to view their status history and assigned Package and BuildBox. </p>
+                                                <p><a class="btn" href="job.htm">View details &raquo;</a>
+                                            </p>
+                                        </div>
+                                        <!--/span-->
+                                        <div class="span4">
+                                            <h2>Build Boxes</h2>
+                                            <p>
+                                                Click here to register/delete BuildBoxes, as well as to view their status and currently assigned jobs.
+                                            </p>
+                                            <p>
+                                                <a class="btn" href="buildd.htm">View details &raquo;</a>
+                                            </p>
+                                        </div>
+                                        <!--/span-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <footer>
+                        <p>
+                            &copy; TCL 2012
+                        </p>
+                    </footer>
+                </div>
+                <!--/.fluid-container-->
+            </div>
+        </div>
+    </body>
+</html>

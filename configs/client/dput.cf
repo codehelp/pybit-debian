@@ -1,0 +1,6 @@
+[local]
+fqdn                    = localhost
+incoming                = /tmp/
+login                   = buildd
+method                  = local
+allow_unsigned_uploads  = true
