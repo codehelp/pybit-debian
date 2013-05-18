@@ -1,7 +1,9 @@
-pybit (0.5.0-2) UNRELEASED; urgency=low
+pybit (1.0.0-1) unstable; urgency=low
 
+  * New upstream release
   * Put call to dbc_go inside the check for dbconfig-common.
     (Closes: #700615)
+  * Use separated debian packaging.
 
  -- Neil Williams <codehelp@debian.org>  Fri, 15 Feb 2013 11:53:58 +0000
 
