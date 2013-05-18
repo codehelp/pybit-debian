@@ -42,9 +42,9 @@ build-stamp: configure-stamp
 build-setup: setup.py
 	dh_testdir
 	python setup.py build
-	xsltproc --nonet http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl debian/pybit-client.1.xml
-	xsltproc --nonet http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl debian/pybit-watcher.1.xml
-	xsltproc --nonet http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl debian/pybit-web.1.xml
+	xsltproc --nonet /usr/share/xml/docbook/stylesheet/docbook-xsl/manpages/docbook.xsl debian/pybit-client.1.xml
+	xsltproc --nonet /usr/share/xml/docbook/stylesheet/docbook-xsl/manpages/docbook.xsl debian/pybit-watcher.1.xml
+	xsltproc --nonet /usr/share/xml/docbook/stylesheet/docbook-xsl/manpages/docbook.xsl debian/pybit-web.1.xml
 	mv pybit-client.1 debian/
 	mv pybit-web.1 debian/
 	mv pybit-watcher.1 debian/
