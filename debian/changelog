@@ -1,3 +1,9 @@
+pybit (1.0.0-2) unstable; urgency=low
+
+  * [INTL:sk] Add Slovak debconf translation (Closes: #709080)
+
+ -- Neil Williams <codehelp@debian.org>  Mon, 20 May 2013 21:54:35 +0100
+
 pybit (1.0.0-1) unstable; urgency=low
 
   * New upstream release

@@ -1,0 +1,257 @@
+# Slovak translation of pybit debconf template
+# Copyright (C) 2013, pybit COPYRIGHT HOLDER
+# This file is distributed under the same license as the pybit package.
+# Ivan Masár <helix84@centrum.sk>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: pybit\n"
+"Report-Msgid-Bugs-To: pybit@packages.debian.org\n"
+"POT-Creation-Date: 2012-12-15 22:13+0000\n"
+"PO-Revision-Date: 2013-05-20 18:41+0200\n"
+"Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
+"Language-Team: Slovak <debian-l10n-slovak@lists.debian.org>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: string
+#. Description
+#: ../pybit-client.templates:1001
+msgid "PyBit client-ID string:"
+msgstr "reťazec na identifikáciu klienta PyBit:"
+
+#. Type: string
+#. Description
+#: ../pybit-client.templates:1001
+msgid ""
+"Please specify a unique string that can be used to identify this client "
+"within the job list and queues."
+msgstr ""
+"Prosím, zadajte jedinečný reťazec, ktorý sa dá použiť na identifikáciu tohto "
+"klienta v rámci zoznamu úloh a frontov."
+
+#. Type: boolean
+#. Description
+#: ../pybit-client.templates:2001
+msgid "Use LVM snapshots on this client?"
+msgstr "Používať snímky LVM na tomto klientovi?"
+
+#. Type: boolean
+#. Description
+#: ../pybit-client.templates:2001
+msgid ""
+"If the sbuild configuration uses LVM snapshots, pybit-client can ensure that "
+"your snapshot APT cache data is kept up-to-date whilst keeping the snapshot "
+"clean."
+msgstr ""
+"Ak konfigurácia sbuild používa snímky LVM, pybit-client môže zabezpečiť, aby "
+"dáta vyrovnávacej pamäte APT vašej snímky boli aktuálne a zároveň udržať "
+"čisté snímky."
+
+#. Type: string
+#. Description
+#: ../pybit-client.templates:3001
+msgid "Buildd location:"
+msgstr "Umiestnenie buildd:"
+
+#. Type: string
+#. Description
+#: ../pybit-client.templates:3001
+msgid ""
+"Please specify a writeable directory where the version control handler and "
+"the upload task can write files."
+msgstr ""
+"Prosím, zadajte zapisovateľný adresár, kde  môže obsluha riadenia verzií a "
+"nahrávacia úloha zapisovať súbory."
+
+#. Type: string
+#. Description
+#: ../pybit-client.templates:3001
+msgid "If this is left blank, the default /home/buildd/pybit will be used."
+msgstr ""
+"Ak toto pole ponecháte prázdne, použije sa predvolený adresár "
+"/home/buildd/pybit."
+
+#. Type: string
+#. Description
+#: ../pybit-client.templates:4001 ../pybit-web.templates:1001
+msgid "Host machine running RabbitMQ:"
+msgstr "Hostiteľský počítač, kde beží RabbitMQ:"
+
+#. Type: string
+#. Description
+#: ../pybit-client.templates:4001
+msgid ""
+"Please specify the server running RabbitMQ that this buildd client will "
+"communicate with, receiving details of the jobs it needs to attempt to build."
+msgstr ""
+"Prosím, zadajte server, kde beží RabbitMQ, s ktorým bude tento klient buildd "
+"komunikovať a prijímať podrobnosti úloh, ktoré sa má pokúsiť zostaviť."
+
+#. Type: string
+#. Description
+#: ../pybit-client.templates:5001
+msgid "Destination for dput package uploads:"
+msgstr "Cieľ nahrávania dput súborov balíkov:"
+
+#. Type: string
+#. Description
+#: ../pybit-client.templates:5001
+msgid ""
+"Please specify the machine that this client will use as upload host. This "
+"destination will be stored in its dput configuration."
+msgstr ""
+"Prosím, uveďte počítač, na ktorý tento klient bude nahrávať. Tento cieľ sa "
+"uloží v konfigurácii dput."
+
+#. Type: string
+#. Description
+#: ../pybit-client.templates:5001
+msgid "This entry must not be empty."
+msgstr "Táto položka nesmie byť prázdna."
+
+#. Type: note
+#. Description
+#: ../pybit-client.templates:6001
+msgid "Client-ID string cannot be empty!"
+msgstr "Reťazec identifikácia klienta (Client-ID) nemôže byť prázdny!"
+
+#. Type: note
+#. Description
+#: ../pybit-client.templates:6001
+msgid "This client will fail to start until it receives a unique client-ID."
+msgstr ""
+"Tohto klienta sa nepodarí spustiť dovtedy, kým nedostane jedinečnú "
+"identifikáciu klienta (Client-ID)."
+
+#. Type: note
+#. Description
+#: ../pybit-client.templates:7001 ../pybit-web.templates:4001
+msgid "Missing RabbitMQ hostname!"
+msgstr "Chýba názov počítača s RabbitMQ!"
+
+#. Type: note
+#. Description
+#: ../pybit-client.templates:7001
+msgid ""
+"This client will not receive any messages from the queue and will not build "
+"any packages until a RabbitMQ host is specified."
+msgstr ""
+"Tento klient nedostane žiadne správy z frontu a nebudete zostavovať žiadne "
+"balíky, kým nezadáte názov počítača s RabbitMQ."
+
+#. Type: note
+#. Description
+#: ../pybit-client.templates:7001
+msgid "Please edit /etc/pybit/client/client.conf after configuration."
+msgstr "Prosím, po konfigurácii upravte /etc/pybit/client/client.conf."
+
+#. Type: note
+#. Description
+#: ../pybit-client.templates:8001
+msgid "Missing dput destination!"
+msgstr "Chýba cieľ dput!"
+
+#. Type: note
+#. Description
+#: ../pybit-client.templates:8001
+msgid ""
+"pybit-client is not intended to upload to unspecified dput destinations like "
+"ftp-master.debian.org and does not currently support GnuPG signed uploads."
+msgstr ""
+"pybit-client nie je určený na nahrávanie na nešpecifikované ciele dput, ako "
+"je ftp-master.debian.org a v súčasnosti nepodporuje nahrávania podpísané "
+"pomocou GnuPG."
+
+#. Type: string
+#. Description
+#: ../pybit-web.templates:1001
+msgid ""
+"Please specify the server running RabbitMQ with which the web front-end and "
+"the pyBit controller need to communicate, sending the details of the jobs to "
+"be built."
+msgstr ""
+"Prosím, zadaj, na ktorom serveri beží RabbitMQ s ktorým majú webové "
+"rozhranie a radič pyBit komunikovať a odosielať podrobnosti úloh, ktoré sa "
+"majú zostaviť."
+
+#. Type: string
+#. Description
+#: ../pybit-web.templates:2001
+msgid "Fully qualified hostname for the web front-end:"
+msgstr "Plne kvalifikovaný názov hostiteľa pre webové rozhranie:"
+
+#. Type: string
+#. Description
+#: ../pybit-web.templates:2001
+msgid ""
+"Please specify the host running the web front-end (which will also be "
+"running the pyBit controller)."
+msgstr ""
+"Prosím, uveďte počítač, na ktorom beží webové rozhranie (na ktorom bude tiež "
+"bežať radič pyBit)."
+
+#. Type: string
+#. Description
+#: ../pybit-web.templates:2001
+msgid ""
+"You may choose to use a named Apache virtual host or accept the default if "
+"all the pyBit clients also run on this one machine."
+msgstr ""
+"Môžete použiť pomenovaného virtuálneho hostiteľa Apache alebo prijať "
+"predvolenú hodnotu ak všetci klienti pyBit budú tiež bežať na tomto jednom "
+"počítači."
+
+#. Type: string
+#. Description
+#: ../pybit-web.templates:2001
+msgid ""
+"The hostname is passed down to the build clients to allow them to post "
+"failure messages back to the controller."
+msgstr ""
+"Názov hostiteľa sa odovzdá zostavovacím klientom, aby mohli posielať správy "
+"o zlyhaní späť radiču."
+
+#. Type: string
+#. Description
+#: ../pybit-web.templates:3001
+msgid "Port for web front-end:"
+msgstr "Port webového rozhrania:"
+
+#. Type: string
+#. Description
+#: ../pybit-web.templates:3001
+msgid ""
+"Please specify the port that the web front-end should be available on. If it "
+"is serving localhost, it is probably easiest to use port 8080."
+msgstr ""
+"Prosím, zadajte port, na ktorom by malo byť k dispozícii webové rozhranie. "
+"Ak sa nachádza na lokálnom počítači, je asi najjednoduchšie použiť port "
+"8080."
+
+#. Type: string
+#. Description
+#: ../pybit-web.templates:3001
+msgid ""
+"If the web front-end is running on a dedicated host or an Apache virtual "
+"host, it may be preferable to use port 80."
+msgstr ""
+"Ak webové rozhranie beží na vyhradenom počítači alebo na virtuálnom "
+"hostiteľovi Apache, môže byť vhodnejšie použiť port 80."
+
+#. Type: note
+#. Description
+#: ../pybit-web.templates:4001
+msgid ""
+"If no RabbitMQ host is specified for the pyBit controller, the build clients "
+"will not receive any messages on the queue or build any packages."
+msgstr ""
+"Ak nie je uvedený žiadny hostiteľ RabbitMQ radič pyBit, zostavovací klienti "
+"nebudú prijímať žiadne správy na fronte ani zostavovať žiadne balíky."
+
+#. Type: note
+#. Description
+#: ../pybit-web.templates:4001
+msgid "Please edit /etc/pybit/web/web.conf after configuration."
+msgstr "Prosím, po konfigurácii upravte /etc/pybit/web/web.conf."
