@@ -1,0 +1,260 @@
+# translation to French of pybit debconf templates.
+# Copyright (C) 2013 French l10n team <debian-l10n-french@lists.debian.org>
+# This file is distributed under the same license as the PYBIT package.
+# Julien Patriarca <leatherface@debian.org>, 2013
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pybit\n"
+"Report-Msgid-Bugs-To: pybit@packages.debian.org\n"
+"POT-Creation-Date: 2012-12-15 22:13+0000\n"
+"PO-Revision-Date: 2013-05-22 18:54+0100\n"
+"Last-Translator: Julien Patriarca <leatherface@debian.org>\n"
+"Language-Team: FRENCH <debian-l10n-french@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#. Type: string
+#. Description
+#: ../pybit-client.templates:1001
+msgid "PyBit client-ID string:"
+msgstr "Chaîne client-ID pour PyBit :"
+
+#. Type: string
+#. Description
+#: ../pybit-client.templates:1001
+msgid ""
+"Please specify a unique string that can be used to identify this client "
+"within the job list and queues."
+msgstr ""
+"Veuillez indiquer une chaîne unique pouvant être utilisée pour identifier ce "
+"client au sein de la liste de tâches et des files d'attente."
+
+#. Type: boolean
+#. Description
+#: ../pybit-client.templates:2001
+msgid "Use LVM snapshots on this client?"
+msgstr "Utiliser des instantanés LVM sur ce client ?"
+
+#. Type: boolean
+#. Description
+#: ../pybit-client.templates:2001
+msgid ""
+"If the sbuild configuration uses LVM snapshots, pybit-client can ensure that "
+"your snapshot APT cache data is kept up-to-date whilst keeping the snapshot "
+"clean."
+msgstr ""
+"Si la configuration sbuild utilise des instantanés LVM, pybit-client peut "
+"s'assurer que votre instantané des données du cache de APT sont mises à jour "
+"tout en gardant l'instantané propre."
+
+#. Type: string
+#. Description
+#: ../pybit-client.templates:3001
+msgid "Buildd location:"
+msgstr "Emplacement de Buildd :"
+
+#. Type: string
+#. Description
+#: ../pybit-client.templates:3001
+msgid ""
+"Please specify a writeable directory where the version control handler and "
+"the upload task can write files."
+msgstr ""
+"Veuillez indiquer un répertoire avec les droits d'écriture dans lequel le "
+"gestionnaire de contrôle de version et la tâche de téléversement peuvent "
+"écrire des fichiers."
+
+#. Type: string
+#. Description
+#: ../pybit-client.templates:3001
+msgid "If this is left blank, the default /home/buildd/pybit will be used."
+msgstr "Si laissé vide, la valeur par défaut /home/buildd/pybit sera utilisée."
+
+#. Type: string
+#. Description
+#: ../pybit-client.templates:4001 ../pybit-web.templates:1001
+msgid "Host machine running RabbitMQ:"
+msgstr "Machine hôte hébergeant RabbitMQ :"
+
+#. Type: string
+#. Description
+#: ../pybit-client.templates:4001
+msgid ""
+"Please specify the server running RabbitMQ that this buildd client will "
+"communicate with, receiving details of the jobs it needs to attempt to build."
+msgstr ""
+"Veuillez indiquer le serveur faisant tourner RabbitMQ avec lequel ce client "
+"buildd communiquera, et qui recevra les détails des tâches dont il a besoin "
+"pour tenter de compiler."
+
+#. Type: string
+#. Description
+#: ../pybit-client.templates:5001
+msgid "Destination for dput package uploads:"
+msgstr "Destination pour les téléversements du paquet dput : "
+
+#. Type: string
+#. Description
+#: ../pybit-client.templates:5001
+msgid ""
+"Please specify the machine that this client will use as upload host. This "
+"destination will be stored in its dput configuration."
+msgstr ""
+"Veuillez indiquer la machine dont se servira ce client comme hôte de "
+"téléversement. Cet emplacement sera enregistré dans sa configuration dput."
+
+#. Type: string
+#. Description
+#: ../pybit-client.templates:5001
+msgid "This entry must not be empty."
+msgstr "Cette entrée ne peut pas être vide."
+
+#. Type: note
+#. Description
+#: ../pybit-client.templates:6001
+msgid "Client-ID string cannot be empty!"
+msgstr "La chaîne Client-ID ne peut pas être vide !"
+
+#. Type: note
+#. Description
+#: ../pybit-client.templates:6001
+msgid "This client will fail to start until it receives a unique client-ID."
+msgstr ""
+"Ce client ne pourra pas démarrer tant qu'il n'aura pas obtenu un client-ID "
+"unique."
+
+#. Type: note
+#. Description
+#: ../pybit-client.templates:7001 ../pybit-web.templates:4001
+msgid "Missing RabbitMQ hostname!"
+msgstr "Nom d'hôte pour RabbitMQ manquant !"
+
+#. Type: note
+#. Description
+#: ../pybit-client.templates:7001
+msgid ""
+"This client will not receive any messages from the queue and will not build "
+"any packages until a RabbitMQ host is specified."
+msgstr ""
+"Ce client ne recevra pas de messages depuis la file d'attente et ne "
+"compilera aucun paquet tant qu'un hôte RabbitMQ n'est pas indiqué."
+
+#. Type: note
+#. Description
+#: ../pybit-client.templates:7001
+msgid "Please edit /etc/pybit/client/client.conf after configuration."
+msgstr ""
+"Veuillez éditer le fichier /etc/pybit/client/client.conf après la "
+"configuration."
+
+#. Type: note
+#. Description
+#: ../pybit-client.templates:8001
+msgid "Missing dput destination!"
+msgstr "Emplacement de dput manquant !"
+
+#. Type: note
+#. Description
+#: ../pybit-client.templates:8001
+msgid ""
+"pybit-client is not intended to upload to unspecified dput destinations like "
+"ftp-master.debian.org and does not currently support GnuPG signed uploads."
+msgstr ""
+"pybit-client n'a pas pour vocation de téléverser vers des emplacements dput "
+"non-spécifés comme ftp-master.debian.org et ne supporte actuellement pas les "
+"téléversements signés avec GnuPG."
+
+#. Type: string
+#. Description
+#: ../pybit-web.templates:1001
+msgid ""
+"Please specify the server running RabbitMQ with which the web front-end and "
+"the pyBit controller need to communicate, sending the details of the jobs to "
+"be built."
+msgstr ""
+"Veuillez indiquer le serveur hébergeant RabbitMQ avec lequel le serveur web "
+"frontal communiquera, et qui enverra les détails de la tâche à compiler."
+
+#. Type: string
+#. Description
+#: ../pybit-web.templates:2001
+msgid "Fully qualified hostname for the web front-end:"
+msgstr "Nom d'hôte pleinement qualifié pour le serveur web frontal :"
+
+#. Type: string
+#. Description
+#: ../pybit-web.templates:2001
+msgid ""
+"Please specify the host running the web front-end (which will also be "
+"running the pyBit controller)."
+msgstr ""
+"Veuillez indiquer l'hôte hébergeant le serveur web frontal (qui fera "
+"également tourner le contrôleur pyBit)."
+
+#. Type: string
+#. Description
+#: ../pybit-web.templates:2001
+msgid ""
+"You may choose to use a named Apache virtual host or accept the default if "
+"all the pyBit clients also run on this one machine."
+msgstr ""
+"Vous pouvez choisir d'utiliser un hôte virtuel Apache nommé ou accepter la "
+"valeur par défaut, si tous les clients pyBit tournent également sur cette "
+"machine."
+
+#. Type: string
+#. Description
+#: ../pybit-web.templates:2001
+msgid ""
+"The hostname is passed down to the build clients to allow them to post "
+"failure messages back to the controller."
+msgstr ""
+"Le nom d'hôte est passé aux clients de compilation les autorisant ainsi à "
+"émettre des messages d'échec au contrôleur."
+
+#. Type: string
+#. Description
+#: ../pybit-web.templates:3001
+msgid "Port for web front-end:"
+msgstr "Port pour le serveur web frontal : "
+
+#. Type: string
+#. Description
+#: ../pybit-web.templates:3001
+msgid ""
+"Please specify the port that the web front-end should be available on. If it "
+"is serving localhost, it is probably easiest to use port 8080."
+msgstr ""
+"Veuillez indiquer le port sur lequel le serveur web frontal sera disponible. "
+"Si celui-ci est local, il est probablement plus aisé d'utiliser le port 8080."
+
+#. Type: string
+#. Description
+#: ../pybit-web.templates:3001
+msgid ""
+"If the web front-end is running on a dedicated host or an Apache virtual "
+"host, it may be preferable to use port 80."
+msgstr ""
+"Si le serveur web frontal tourne sur un hôte dédié ou sur un hôte virtuel "
+"Apache, il serait préférable d'utiliser le port 80."
+
+#. Type: note
+#. Description
+#: ../pybit-web.templates:4001
+msgid ""
+"If no RabbitMQ host is specified for the pyBit controller, the build clients "
+"will not receive any messages on the queue or build any packages."
+msgstr ""
+"Si aucun hôte RabbitMQ n'est indiqué pour le contrôleur pyBit, les clients "
+"de compilation ne recevront aucun message sur la file d'attente ou ne "
+"compileront aucun paquet."
+
+#. Type: note
+#. Description
+#: ../pybit-web.templates:4001
+msgid "Please edit /etc/pybit/web/web.conf after configuration."
+msgstr ""
+"Veuillez éditer le fichier /etc/pybit/web/web.conf après la configuration."

@@ -3,6 +3,7 @@ pybit (1.0.0-2) unstable; urgency=low
   * [INTL:sk] Add Slovak debconf translation (Closes: #709080)
   * [INTL:it] Italian translation of debconf messages for pybit
     (Closes: #710518)
+  * [INTL:fr] French debconf templates translation (Closes: #710694)
 
  -- Neil Williams <codehelp@debian.org>  Mon, 20 May 2013 21:54:35 +0100
 
