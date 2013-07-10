@@ -4,6 +4,7 @@ pybit (1.0.0-2) unstable; urgency=low
   * [INTL:it] Italian translation of debconf messages for pybit
     (Closes: #710518)
   * [INTL:fr] French debconf templates translation (Closes: #710694)
+  * [INTL:sv] Swedish strings for pybit debconf (Closes: #715540)
 
  -- Neil Williams <codehelp@debian.org>  Mon, 20 May 2013 21:54:35 +0100
 
