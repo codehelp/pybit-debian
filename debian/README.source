@@ -1,5 +1,7 @@
 Building pybit source distributions
 
+In the pybit source check-out directory create a source tarball using:
+
 $ python setup.py sdist
 
 The distribution tarball will be in the dist/ directory.
@@ -7,9 +9,17 @@ The distribution tarball will be in the dist/ directory.
 Building Debian packages
 
 Create a ../tarballs/ directory
+Create a ../build-area/ directory
+
 Copy the tag tarball as pybit_$VER.orig.tar.gz into ../tarballs/
 or use:
 uscan --destdir ../tarballs
 
 BUILDER=pbuilder git-buildpackage
+
+As an upstream developer or user if you want to build from source you'll need
+to set more options.
+
+ git-buildpackage --git-export-dir=../build-area --git-tarball-dir=../tarballs \
+  --git-overlay -uc -us 
 
