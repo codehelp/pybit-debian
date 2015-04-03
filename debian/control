@@ -38,6 +38,7 @@ Architecture: all
 Depends: sbuild, dput, dpkg-dev, pybit-common, python-requests,
  subversion, pbuilder, libcrypt-ssleay-perl, libjson-perl,
  ${python:Depends}, ${misc:Depends}
+Suggests: rng-tools
 Description: buildd client support for pybit
  pyBit uses message queues to create a distributed, cross-platform
  buildd toolkit using a collection of buildds, using source from

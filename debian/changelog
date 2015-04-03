@@ -1,6 +1,9 @@
 pybit (1.0.0-3) unstable; urgency=medium
 
   * Incorporate NMU, thanks to Jonathan Wiltshire. (Closes: #762220)
+  * Update backend support to only svn and git, add note to manpage
+    for pybit-client manpage to explain the issues with the
+    incomplete apt backend. (Closes: #781594)
 
  -- Neil Williams <codehelp@debian.org>  Fri, 03 Apr 2015 19:44:27 +0100
 

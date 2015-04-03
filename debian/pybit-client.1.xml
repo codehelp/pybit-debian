@@ -176,6 +176,24 @@ for 0.4.1 or the client will fail to start as it will be unable to bind
 to the necessary queues.
 </para>
     </refsect2>
+    <refsect2 id="backends">
+        <title>Client backends</title>
+        <para>
+The principal backend for this version of pybit is SVN - the git and
+apt backends are not complete. The apt backend, in particular, is not
+intended for use building any packages which would be uploaded to a
+public repository as it disables Apt authentication by default for easier
+configuration of local repositories of build dependencies.
+        </para>
+<para>
+The test script relies on a example buildd data file - this file can quickly
+become out of date, check the pybit wiki for more examples.
+https://github.com/nicholasdavidson/pybit/wiki/Debian-clients
+</para>
+        <para>
+Enabled backends need to be symlinked into <code>/var/lib/pybit-client.d</code>
+        </para>
+    </refsect2>
     <refsect2 id="testing">
       <title>Testing the chroots</title>
       <para>
