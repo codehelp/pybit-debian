@@ -6,7 +6,7 @@ Uploaders: Nick Davidson <nicholas.davidson@gmail.com>,
  Simon Haswell <maxcady78@hotmail.co.uk>,
  James Bennet <github@james-bennet.com>
 Build-Depends: debhelper (>= 7.0.50~), docbook-xsl, xsltproc, po-debconf,
- python, python-setuptools,
+ dh-python, python, python-setuptools,
  python-jsonpickle,
  python-requests,
  python-amqplib
