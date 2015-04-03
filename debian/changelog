@@ -1,3 +1,17 @@
+pybit (1.0.0-3) unstable; urgency=medium
+
+  * Incorporate NMU, thanks to Jonathan Wiltshire. (Closes: #762220)
+
+ -- Neil Williams <codehelp@debian.org>  Fri, 03 Apr 2015 19:44:27 +0100
+
+pybit (1.0.0-2.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Remove old dependency on python2.6 (Closes: #761567)
+  * [INTL:es] Add Spanish debconf translation (Closes: #733497)
+
+ -- Jonathan Wiltshire <jmw@debian.org>  Fri, 19 Sep 2014 18:53:32 +0100
+
 pybit (1.0.0-2) unstable; urgency=low
 
   * [INTL:sk] Add Slovak debconf translation (Closes: #709080)

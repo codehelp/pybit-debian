@@ -6,11 +6,11 @@ Uploaders: Nick Davidson <nicholas.davidson@gmail.com>,
  Simon Haswell <maxcady78@hotmail.co.uk>,
  James Bennet <github@james-bennet.com>
 Build-Depends: debhelper (>= 7.0.50~), docbook-xsl, xsltproc, po-debconf,
- python (>= 2.6.6-3~), python2.6 | python2.7, python-setuptools,
+ python, python-setuptools,
  python-jsonpickle,
  python-requests,
  python-amqplib
-X-Python-Version: 2.6, 2.7
+X-Python-Version: 2.7
 Standards-Version: 3.9.4
 Homepage: http://nicholasdavidson.github.com/pybit/
 Vcs-Git: git://github.com/codehelp/pybit-debian.git
